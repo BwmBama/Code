@@ -1770,6 +1770,10 @@
               $('#12month').hide()
             } else {
               $('#12month').show()
+            if (!plan_time.includes('light')) {
+              $('#light').hide()
+            } else {
+              $('#light').show()
             }
           }
         }
