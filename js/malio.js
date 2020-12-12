@@ -685,7 +685,7 @@
     }
     var sublink = {
       surfboard: "surfboard:///install-config?url=" + encodeURIComponent(subLink),
-      quantumult: "quantumult://configuration?server=" + btoa(subLink).replace(/=/g, '') + "&filter=YUhSMGNITTZMeTl0ZVM1dmMyOWxZMjh1ZUhsNkwzSjFiR1Z6TDNGMVlXNTBkVzExYkhRdVkyOXVaZw",
+      quantumult: "quantumult://configuration?server=" + btoa(subLink).replace(/=/g, '') + "&filter=aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL0J3bUJhbWEvU1MtUnVsZS1TbmlwcGV0L0xBWllfUlVMRVMvUXVhbnR1bXVsdC5jb25m",
       shadowrocket: "shadowrocket://add/sub://" + btoa(subLink) + "?remarks=" + appName,
       surge: "surge:///install-config?url=" + encodeURIComponent(subLink),
       surge3: "surge3:///install-config?url=" + encodeURIComponent(subLink),
