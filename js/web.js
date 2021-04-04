@@ -1178,7 +1178,7 @@
     function f() {
       $.ajax({
         type: "POST",
-        url: "/clientarea/payment/status",
+        url: "/payment/status",
         dataType: "json",
         data: {
           pid: pid
