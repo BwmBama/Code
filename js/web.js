@@ -291,7 +291,7 @@
               type: 'success',
               title: i18n['successful-purchase'],
               onClose: () => {
-                window.location.assign('/user/invite')
+                window.location.assign('/clientarea/user/invite')
               }
             })
           } else {
@@ -1518,7 +1518,7 @@
             if (data.type == 'url') {
               window.location.href = data.url;
             } else {
-              window.location.href = '/user/qrcode?type='+type
+              window.location.href = '/clientarea/user/qrcode?type='+type
                 +'&qrcode='+encodeURIComponent(data.url)
                 +'&tradeno='
                 +data.tradeno
@@ -1803,7 +1803,7 @@
             type: 'success',
             title: '购买成功',
             onClose: () => {
-              window.location.assign('/user')
+              window.location.assign('/clientarea/user')
             }
           })
         } else {
@@ -2055,7 +2055,7 @@
             title: '成功添加中转规则',
             type: 'success',
             onClose: () => {
-              window.location.assign('/user/relay')
+              window.location.assign('/clientarea/user/relay')
             }
           })
         } else {
@@ -2073,7 +2073,7 @@
 
     $.ajax({
       type: 'PUT',
-      url: '/user/relay/' + rule_id,
+      url: '/clientarea/user/relay/' + rule_id,
       dataType: 'json',
       data: {
         source_node: $('#source_node').val(),
@@ -2087,7 +2087,7 @@
             title: '已更新中转规则',
             type: 'success',
             onClose: () => {
-              window.location.assign('/user/relay')
+              window.location.assign('/clientarea/user/relay')
             }
           })
         } else {
@@ -2126,7 +2126,7 @@
                 title: '已删除中转规则',
                 type: 'success',
                 onClose: () => {
-                  window.location.assign('/user/relay')
+                  window.location.assign('/clientarea/user/relay')
                 }
               })
             } else {
@@ -2205,7 +2205,7 @@
     var user_location = ((url.split("//")[1]).split("/"));
     var current = '';
     if (user_location.length == 2) {
-      current = $(".sidebar-menu a[href$='/user']");
+      current = $(".sidebar-menu a[href$='/clientarea/user']");
     } else if (user_location.length >= 3) {
       if (user_location[2] == 'ticket') {
         current = $(".sidebar-menu a[href$='#ticket']");
@@ -2217,7 +2217,7 @@
         current = $(".sidebar-menu a[href$='#node-settings']");
         current.addClass('has-dropdown');
       } else {
-        var query_str = ".sidebar-menu a[href$='/user/" + user_location[2] + "']";
+        var query_str = ".sidebar-menu a[href$='/clientarea/user/" + user_location[2] + "']";
         current = $(query_str);
       }
     }
