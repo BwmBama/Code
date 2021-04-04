@@ -206,7 +206,7 @@
           text: i18n['config-url-reset-modal-desc'],
           type: 'success',
           onClose: () => {
-            window.location.assign('/user/url_reset')
+            window.location.assign('/clientarea/user/url_reset')
           }
         })
       }
@@ -280,7 +280,7 @@
     } else {
       $.ajax({
         type: "POST",
-        url: "/user/buy_invite",
+        url: "/clientarea/user/buy_invite",
         dataType: "json",
         data: {
           num: $("#buy-invite-num").val(),
@@ -299,7 +299,7 @@
               type: 'error',
               title: i18n['failed'],
               text: data.msg,
-              footer: '<a href="/user/code">'+i18n['go-to-wallet']+'</a>'
+              footer: '<a href="/clientarea/user/code">'+i18n['go-to-wallet']+'</a>'
             })
           }
         },
@@ -322,7 +322,7 @@
     } else {
       $.ajax({
         type: "POST",
-        url: "/user/custom_invite",
+        url: "/clientarea/user/custom_invite",
         dataType: "json",
         data: {
           customcode: $("#custom-invite-link").val()
@@ -333,7 +333,7 @@
               type: 'success',
               title: i18n['customize-inivitation-link-successfully'],
               onClose: () => {
-                window.location.assign('/user/invite')
+                window.location.assign('/clientarea/user/invite')
               }
             })
           } else {
@@ -341,7 +341,7 @@
               type: 'error',
               title: i18n['failed'],
               text: data.msg,
-              footer: '<a href="/user/code">'+i18n['go-to-wallet']+'</a>'
+              footer: '<a href="/clientarea/user/code">'+i18n['go-to-wallet']+'</a>'
             })
           }
         },
@@ -380,7 +380,7 @@
             title: data.msg,
             showCloseButton: true,
             onClose: () => {
-              window.location.assign('/user/profile')
+              window.location.assign('/clientarea/user/profile')
             }
           })
         } else {
@@ -417,7 +417,7 @@
             title: i18n['2fa-has-been-disabled'],
             showCloseButton: true,
             onClose: () => {
-              window.location.assign('/user/profile')
+              window.location.assign('/clientarea/user/profile')
             }
           })
         } else {
@@ -456,7 +456,7 @@
             title: i18n['password-changed-successfully'],
             showCloseButton: true,
             onClose: () => {
-              window.location.assign('/user/logout')
+              window.location.assign('/clientarea/user/logout')
             }
           })
         } else {
@@ -533,7 +533,7 @@
     $('#create-ticket').attr("disabled", "disabled");
     $.ajax({
       type: "POST",
-      url: "/user/ticket",
+      url: "/clientarea/user/ticket",
       dataType: "json",
       data: {
         content: $("#ticket-content").val(),
@@ -546,7 +546,7 @@
             type: 'success',
             title: i18n['submitted'],
             onClose: () => {
-              window.location.assign('/user/ticket')
+              window.location.assign('/clientarea/user/ticket')
             }
           })
         } else {
@@ -583,7 +583,7 @@
     }
     $.ajax({
       type: "PUT",
-      url: "/user/ticket/" + id,
+      url: "/clientarea/user/ticket/" + id,
       dataType: "json",
       data: {
         content: $("#ticket-content").val(),
@@ -597,7 +597,7 @@
             type: 'success',
             title: i18n['submitted'],
             onClose: () => {
-              window.location.assign('/user/ticket/' + id + '/view')
+              window.location.assign('/clientarea/user/ticket/' + id + '/view')
             }
           })
         } else {
@@ -624,7 +624,7 @@
 
     $.ajax({
       type: "PUT",
-      url: "/user/ticket/" + id,
+      url: "/clientarea/user/ticket/" + id,
       dataType: "json",
       data: {
         content: i18n['this-ticket-has-been-closed'],
@@ -637,7 +637,7 @@
             type: 'success',
             title: i18n['this-ticket-has-been-closed'],
             onClose: () => {
-              window.location.assign('/user/ticket')
+              window.location.assign('/clientarea/user/ticket')
             }
           })
         } else {
@@ -774,7 +774,7 @@
             type: 'success',
             title: i18n['top-up-successful'],
             onClose: () => {
-              window.location.assign('/user/code')
+              window.location.assign('/clientarea/user/code')
             }
           })
         } else {
@@ -804,7 +804,7 @@
             title: i18n['disabled'],
             text: data.msg,
             onClose: () => {
-              window.location.assign('/user/code')
+              window.location.assign('/clientarea/user/code')
             }
           })
         } else {
@@ -853,7 +853,7 @@
     } else {
       var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
       $.ajax({
-        'url': "/user/payment/purchase",
+        'url': "/clientarea/user/payment/purchase",
         'data': {
           'price': price,
           'type': type,
@@ -898,7 +898,7 @@
   
     $.ajax({
       type: "POST",
-      url: "/user/payment/purchase",
+      url: "/clientarea/user/payment/purchase",
       dataType: "json",
       data: {
         amount: price
@@ -953,7 +953,7 @@
               type: 'success',
               title: '充值成功',
               onClose: () => {
-                window.location.assign('/user/code')
+                window.location.assign('/clientarea/user/code')
               }
             })
           }
@@ -969,7 +969,7 @@
   function spay(price) {
 
     $.ajax({
-      'url': "/user/payment/purchase",
+      'url': "/clientarea/user/payment/purchase",
       'data': {
         'price': price,
       },
@@ -1010,7 +1010,7 @@
       type = 2;
     }
     $.ajax({
-      'url': "/user/code/codepay",
+      'url': "/clientarea/user/code/codepay",
       'data': {
         'price': price,
         'type': type
@@ -1048,7 +1048,7 @@
       type = 'wxpay';
     }
     $.ajax({
-      'url': "/user/payment/purchase",
+      'url': "/clientarea/user/payment/purchase",
       'data': {
         'price': price,
         'type': type,
@@ -1090,7 +1090,7 @@
   function flyfox(type, price) {
 
     $.ajax({
-      'url': "/user/payment/purchase",
+      'url': "/clientarea/user/payment/purchase",
       'data': {
         'price': price,
         'type': type,
@@ -1136,7 +1136,7 @@
   
     $.ajax({
       type: "POST",
-      url: "/user/payment/purchase",
+      url: "/clientarea/user/payment/purchase",
       dataType: "json",
       data: {
         price: price,
@@ -1178,7 +1178,7 @@
     function f() {
       $.ajax({
         type: "POST",
-        url: "/payment/status",
+        url: "/clientarea/payment/status",
         dataType: "json",
         data: {
           pid: pid
@@ -1190,7 +1190,7 @@
               type: 'success',
               title: '充值成功',
               onClose: () => {
-                window.location.assign('/user/code')
+                window.location.assign('/clientarea/user/code')
               }
             })
           }
@@ -1209,7 +1209,7 @@
   
     $.ajax({
       type: "POST",
-      url: "/user/payment/purchase",
+      url: "/clientarea/user/payment/purchase",
       dataType: "json",
       data: {
         amount: price,
@@ -1279,7 +1279,7 @@
               type: 'success',
               title: '充值成功',
               onClose: () => {
-                window.location.assign('/user/code')
+                window.location.assign('/clientarea/user/code')
               }
             })
           }
@@ -1312,7 +1312,7 @@
       }
     } else {
       $.ajax({
-        'url': "/user/payment/purchase",
+        'url': "/clientarea/user/payment/purchase",
         'data': {
           'price': price,
           'type': type,
@@ -1385,7 +1385,7 @@
               type: 'success',
               title: '充值成功',
               onClose: () => {
-                window.location.assign('/user/code')
+                window.location.assign('/clientarea/user/code')
               }
             })
           }
@@ -1401,7 +1401,7 @@
   function payssion(type, price) {
 
     $.ajax({
-      'url': "/user/payment/purchase",
+      'url': "/clientarea/user/payment/purchase",
       'data': {
         'price': price,
         'type': type
@@ -1453,7 +1453,7 @@
       }
     } else {
       $.ajax({
-        'url': "/user/payment/purchase",
+        'url': "/clientarea/user/payment/purchase",
         'data': {
           'total_fee': price,
         },
@@ -1505,7 +1505,7 @@
       }
     } else {
       $.ajax({
-        'url': "/user/payment/purchase",
+        'url': "/clientarea/user/payment/purchase",
         'data': {
           'price': price,
           'type': type,
