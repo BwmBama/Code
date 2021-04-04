@@ -792,7 +792,7 @@
 
     $.ajax({
       type: "DELETE",
-      url: "/user/bought",
+      url: "/clientarea/user/bought",
       dataType: "json",
       data: {
         id: orderId
@@ -1557,7 +1557,7 @@
     }
 
     $.ajax({
-      'url': "/user/payment/purchase",
+      'url': "/clientarea/user/payment/purchase",
       'data': {
         'price': price,
         'type': type,
@@ -1870,7 +1870,7 @@
     function f() {
       $.ajax({
         'type': "GET",
-        'url': "/user/money",
+        'url': "/clientarea/user/money",
         dataType: "json",
         async: false,
         success: function (data) {
@@ -2041,7 +2041,7 @@
 
     $.ajax({
       type: "POST",
-      url: "/user/relay",
+      url: "/clientarea/user/relay",
       dataType: "json",
       data: {
         source_node: $('#source_node').val(),
@@ -2115,7 +2115,7 @@
       if (result.value) {
         $.ajax({
           type: "DELETE",
-          url: "/user/relay",
+          url: "/clientarea/user/relay",
           dataType: "json",
           data: {
             id: rule_id
