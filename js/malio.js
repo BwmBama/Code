@@ -9,7 +9,7 @@
 
     $.ajax({
       type: "POST",
-      url: "/user/api/change-lang",
+      url: "/clientarea/user/api/change-lang",
       dataType: "json",
       data: {
         lang: lang
@@ -25,7 +25,7 @@
 
     $.ajax({
       type: "POST",
-      url: "/user/checkin",
+      url: "/clientarea/user/checkin",
       dataType: "json",
       success: function (data) {
         $('#checkin-div').html('<a href="#" class="btn btn-icon disabled icon-left btn-primary"><i class="far fa-edit"></i> '+i18n['alredy-got-daily-bonus']+'</a>')
@@ -42,7 +42,7 @@
     $('#loadTrafficChart-div').html('<a id="loadTrafficChart" href="#" class="btn disabled btn-primary btn-progress">Progress</a>');
     $.ajax({
       type: "GET",
-      url: "/user/trafficlog",
+      url: "/clientarea/user/trafficlog",
       dataType: "html",
       success: function (data) {
         $('#chartCardbox').html(function () {
